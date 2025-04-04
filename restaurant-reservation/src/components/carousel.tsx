@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 export default function Carousel() {
   const images = [
@@ -16,24 +16,31 @@ export default function Carousel() {
   ];
 
   return (
-    <div className="bg-[#080808] w-full mx-auto py-20">
+    <div className="bg-[#080808] w-full mx-auto py-20 overflow-hidden">
       <Swiper
-        slidesPerView={2}
-        spaceBetween={5}
+        modules={[Autoplay]}
         loop={true}
-        pagination={{ clickable: true }}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
+        freeMode={true}
+        slidesPerView="auto"
+        spaceBetween={30}
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+        }}
+        speed={8000} // mais lento = maior valor
+        grabCursor={false}
       >
         {images.map((src, index) => (
-          <SwiperSlide key={index} className="custom-slide">
+          <SwiperSlide
+            key={index}
+            className="!w-[300px]" // define o tamanho fixo de cada slide
+          >
             <img
               src={src}
               alt={`Imagem ${index + 1}`}
-              className="w-[300px] h-[500px] object-cover rounded-lg shadow-md transition-all duration-300"
+              className="w-full h-[500px] object-cover rounded-lg shadow-md"
             />
           </SwiperSlide>
-
         ))}
       </Swiper>
     </div>
