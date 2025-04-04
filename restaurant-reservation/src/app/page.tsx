@@ -1,13 +1,14 @@
 
-import Hero from "@/components/banner";
-import Header from "../components/header";
 import About from "@/components/about";
-import Location from "@/components/location";
+import Hero from "@/components/banner";
+import Card from "@/components/cards";
+import Carousel from "@/components/carousel";
 import Footer from "@/components/footer";
+import Location from "@/components/location";
 import OpeningHours from "@/components/openinghours";
 import Reservation from "@/components/reservation";
-import Carousel from "@/components/carousel";
-import Card from "@/components/cards";
+import Header from "../components/header";
+
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Location />
       <OpeningHours />
       <Footer />
+      
     </>
   );
 }
