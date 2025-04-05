@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 
-export default function Hero() {
+export default function Banner() {
     return (
         <section className="relative h-[900px] bg-[url('/images/comida-japonesa.jpg')] bg-cover bg-center">
             <div className="absolute inset-0 bg-black/30 flex flex-col justify-between">
